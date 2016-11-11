@@ -1,0 +1,99 @@
+
+*must do ft_whitespaces to finish day 10 problem 7.
+today s:ms like a good day to do ft_whitespaces then. . .
+
+FT Whitespaces on day 7 and on day 8 - so you can look it up there.
+
+*******
+chained lists
+contain data and a link to the next element in the list.
+so adding or deleting an element means you delete pointers.
+
+when you have a bigger list, it becomes a problem for malloc when
+copying an array.
+so chained list solve this b/c you just n:d pointers.
+list will be in reverse form the way it is created.
+
+THE .H FILE:::
+
+#ifndef __list_h__
+#define __list_h__
+
+typdef struct s_list t_list;
+
+struct s_list
+{
+	char *str;
+	t_list *next
+};
+
+t_list *add_link(t_list *list, char *str);
+void	print_list(t_list *list);
+
+#endif
+
+THE MIAN FUNCTION::
+
+#include "list.h"
+#include <stdlib.h>
+
+int main(void)
+{
+	t_list *list;
+
+	list = NULL;
+
+	list = add_link(list, "toto\n");
+	list = add_link(list, "tata\n");
+	list = add_link(list, "tutu\n");
+
+	print_list(list);
+
+	return (0);
+
+}
+
+THE ADD FUNCTION:
+
+#include "list.h"
+#include <stlib.h>
+
+t_list *add_link(t_list *list, char *str)
+{
+	t_list *tmp;
+
+	tmp = malloc(sizeof(t_list));
+	if (tmp)
+	{
+		tmp ->str = str;
+		tmp->next = list;
+	}
+	return tmp;
+}
+
+THE PRINT FUNCTION
+
+#include "list.h"
+
+void print_list(t_list *list)
+{
+	while(list)
+	{
+		ft_putstr(list->str);
+		list->next;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

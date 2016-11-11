@@ -1,0 +1,161 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    notes.txt                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mgould <marvin@42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/11/07 08:42:05 by mgould            #+#    #+#              #
+#    Updated: 2016/11/07 11:11:05 by mgould           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Intro:
+makefile
+pointers to functions
+
+makefiles are great fo taking very complicated command line compilation commands
+into a file that will execute it for you.
+
+Makefile
+runs with command make
+
+ex:
+make clean
+
+usually only 1 rule and it's dependencies are exeuctued on a make command.
+
+***********
+Make Syntax:
+
+name, dependency list, rules composed of shell command lines
+
+Ex:
+
+create file Makefile
+
+regle_a:
+
+***********
+
+Pointers to Functions:
+
+int	x;
+int	*y;
+
+x = 42;
+y = &x;
+
+*y = 0;
+
+// y is now equal to 0 and so is x.  we can do a simliar thing for functions.
+
+*********
+pointers to functions syntax
+
+int	*x;
+int	*y;
+
+void	f(char c);
+
+void	(*funptr)(char);  // you don't n:d to name a pointers function.
+
+. . . . .
+void	(*f)(char);  // pointer to function name is f
+f	= &ft_putchar;
+f('z');
+. . . .
+
+how to do it with a typedef
+
+typedef void	(*funptr)(char);
+funptr	f;
+
+// this looks much better, more like normal variable definition.
+
+3 files taht write
+-one to stdout
+-one to file
+-one to network
+
+imagine you have a bunch of possible output,s it is messy to write this
+into a file, you grow a forrest of if statements.
+
+function put(where, what)
+{
+	if (where equal stdout)
+		put
+	else if (where file)
+		put file what
+	else if (etc)
+		etc.
+	else
+		error
+}
+
+the solution is to use pointers to functions!
+
+function array = [( stdout, &putstdout) ( files, &outfile), ( network, &out
+network)]
+
+function put (where what)
+	for (each entry in array, )
+		if where == function array
+			put_function what;
+
+************
+pointers to functions conclusion
+
+for specific cases you will learn with examples.
+
+is a notion you will come across when you come across c++.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
